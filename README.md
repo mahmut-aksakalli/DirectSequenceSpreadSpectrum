@@ -12,12 +12,12 @@ In our project, end to end simulation of DSSS modulation started with generation
 
 Channel-capacity theorem says that increasing bandwidth improves error performance of communication even if SNR is low. DSSS modulation uses advantage of this theorem so message spectrum spread over higher bandwidth while message power decreases noise level. We can observe effects of DSSS modulation at frequency spectrum. Figure 3 shows frequency spectrum of 8 bits message signal, pseudo-random code and modulated DSSS signal. We observed that bandwidth of message expanded, and power of message spread over higher bandwidth than original message signal.  
 
- ![]({{site.url}}{{site.baseurl}}/images/2.png)
+<img src="images/2.png"/>
 <p align="center"><b>Figure 3:</b>Frequency Spectrums</p>
 
 Final step of DSSS modulation at transmitter is multiplying DSSS signal with carrier of BPSK. We handled phase difference between carriers of binary-0 and bnary-1 using non-return-to-zero coding so we just multiplied DSSS signal with a carrier that has 100 Hz frequency. We analyzed effects of noise in performance evaluation step so we didn’t add any noise at channel. At receiver, we multiplied received signal with pseudo-random code. Then, we multiplied encoded signal with carrier to demodulate signal, and send it to decision device. The critical issue at this point is that the receiver must have same pseudo-random code with transmitter otherwise, it can’t reach original message. This feature of DSSS modulation makes it suitable for secure communication. Non-authorized listeners can’t decode message because they don’t have pseudo-random code. Last plot at Figure 4 shows received message when receiver uses different pseudo-random code than transmitter. It’s obvious that receiver can’t decode original message.
 
- ![]({{site.url}}{{site.baseurl}}/images/3.png)
+<img src="images/3.png"/>
 <p align="center"><b>Figure 4:</b>Original Message and results with true and wrong key at receiver</p>
 
 Decision device integrates signal over a bit duration intervals, and determine binary value of received signal using a threshold value between binary-0 and binary-1. The result of decision device is shown above in Figure 4.
@@ -26,7 +26,7 @@ Decision device integrates signal over a bit duration intervals, and determine b
 
 After we obtain the message signal at receiver with zero error rate, we first tested DSSS modulation with Additive White Gaussian Noise. Results are obtained in terms of Bit Error Rate (BER).  BER is nothing but a ratio of number of error bits and total number of bits transmitted during a specific period. While SNR value decreases, we checked BER and analyzed. We expected to get good BER because DSSS modulation is known for its higher resistance to noise. We repeated each calculation 1000 times and got average value. As a result, we obtained Monte Carlo analyses of BER with different SNR values. Figure5 shows BER vs SNR plot while message signal has length of 100 bits. 
 
- ![]({{site.url}}{{site.baseurl}}/images/6.png)
+<img src="images/6.png"/>
 <p align="center"><b>Figure 5:</b>Additive White Gaussian Noise performance</p>
 
 It is easy to see that the more pseudo-number bits using, the better BER results obtaining. While SNR value is under -30 dB, BER approaches its max value 0.5. Theoretical values are marked with “x” on the plot.
@@ -35,15 +35,15 @@ Next, we analyzed DSSS modulation performance with fading channel effects. In wi
 
 In Rayleigh fading channel model there are one or more major reflected paths from transmitter to receiver. BER vs SNR plot of DSSS is given below while signal is transmitted through Rayleigh fading channel.
 
- ![]({{site.url}}{{site.baseurl}}/images/7.png)
+<img src="images/7.png"/>
 <p align="center"><b>Figure 6:</b>Rayleigh fading channel performance</p>
 
  Rician fading channel model is similar to Rayleigh, except it has direct line-of-sight path in addition. That is why, we expected better result compared to Rayleigh fading channel. BER vs SNR plot of DSSS is given below while signal is transmitted through Rician fading channel.
  
- ![](https://github.com/mahmut-aksakalli/DirectSequenceSpreadSpectrum/blob/master/images/8.png)
+<img src="images/8.png"/>
 <p align="center"><b>Figure 7:</b>Rician fading channel performance</p>
 
- ![]({{site.url}}{{site.baseurl}}/images/9.png)
+<img src="images/9.png"/>
 <p align="center"><b>Figure 8:</b>Performance evaluation for all considered situations</p>
 
 In the last plot, all of three conditions plotted in same graph while each message bit represented by 3 pseudo-random numbers. 
