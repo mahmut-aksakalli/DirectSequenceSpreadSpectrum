@@ -57,4 +57,4 @@ In this project we work on end to end simulation of DSSS modulation. We used mes
 
 - A. Goldsmith, Wireless Communication. Stanford University Press, 2004. (p341)
 
-{{ "/assets/css/style.css" | relative_url }}
+![Some text]({{site.url}}{{site.baseurl}}/images/1.png)
